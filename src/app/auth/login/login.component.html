@@ -1,1 +1,13 @@
-<p>login works!</p>
+<div>
+  <form [formGroup]="loginForm">
+    <div >
+      <label for="email">Email</label>
+      <input type="email" placeholder="Email" formControlName="email">
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" placeholder="Password" formControlName="password">
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</div>
