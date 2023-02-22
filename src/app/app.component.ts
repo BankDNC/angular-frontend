@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-frontend';
+  constructor(
+    private router: Router
+  ) {
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Redirigir al usuario a la página de inicio
+      this.router.navigateByUrl('/dashboard');
+    } else {
+      // Redirigir al usuario al formulario de inicio de sesión
+      this.router.navigateByUrl('/login');
+    }
+  }
 }
