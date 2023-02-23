@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { TokenService } from 'src/app/shared/services/token.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -37,10 +38,10 @@ export class LoginComponent implements OnInit {
     const password = this.loginForm.get('password')?.value;
 
     this.authService.login(email, password)
-    .subscribe({
-      next: (response: any) => this.router.navigate(['/dashboard']),
-      error: (error: any) => console.log(error)
-    });
+      .subscribe({
+        next: () => this.router.navigate(['/dashboard']),
+        error: () => Swal.fire('Error', 'Credenciales incorrectas', 'error')
+      });
   }
 
 }
