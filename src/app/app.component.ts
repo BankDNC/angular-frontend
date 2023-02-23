@@ -16,7 +16,7 @@ export class AppComponent {
       this.router.navigateByUrl('/dashboard');
     } else {
       // Redirigir al usuario al formulario de inicio de sesión
-      this.router.navigateByUrl('/login');
+      this.router.navigateByUrl('/auth');
     }
   }
 }
