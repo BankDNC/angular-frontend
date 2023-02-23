@@ -1,0 +1,33 @@
+<div class="full-width">
+  <h1>Iniciar Sesion</h1>
+  <form [formGroup]="loginForm">
+    <mat-form-field class="full-width">
+      <mat-label>Correo</mat-label>
+      <input type="email" matInput [formControl]="email" placeholder="example@example.com">
+      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+        Porfavor ingrese un correo valido
+      </mat-error>
+      <mat-error *ngIf="email.hasError('required')">
+        El correo es <strong>Requerido</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Contraseña</mat-label>
+      <input type="password" matInput [formControl]="password" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="password.hasError('minlength') && !email.hasError('required')">
+        Porfavor ingrese una contraseña de al menos 8 caracteres
+      </mat-error>
+      <mat-error *ngIf="password.hasError('required')">
+        La contraseña es <strong>Requerida</strong>
+      </mat-error>
+    </mat-form-field>
+    <div class="container-center">
+      <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid" (click)="onSubmit()">Ingresar</button>
+    </div>
+  </form>
+  <hr>
+  <div class="container-register">
+    <button mat-stroked-button color="accent">Registrarse</button>
+  </div>
+</div>

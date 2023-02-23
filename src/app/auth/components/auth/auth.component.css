@@ -1,0 +1,14 @@
+.body{
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, #11151c 0%, #11151c 35%, #11151c 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-container {
+  width: 65%;
+  background-color: white;
+  border-radius: 6px;
+}

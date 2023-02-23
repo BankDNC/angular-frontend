@@ -1,0 +1,23 @@
+.full-width {
+  width: 100%;
+}
+
+.container-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-register{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.container-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
