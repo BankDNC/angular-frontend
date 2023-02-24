@@ -1,0 +1,37 @@
+.full-width {
+  width: 100%;
+}
+
+h1{
+  padding-top: 30px;
+}
+
+.container-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login{
+  padding: 10px;
+}
+
+
+.container-form {
+  height: 100%;
+  text-align: center;
+  border-left: 1px solid;
+  border-image: linear-gradient(to bottom, white, black, white) 1;
+  overflow-y: scroll;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+form{
+  padding: 0 20px;
+}
+
+button{
+  margin-bottom: 10px;
+}

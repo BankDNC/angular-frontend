@@ -8,7 +8,52 @@
 }
 
 .auth-container {
+  display: flex;
+  margin: 0vh auto;
+
   width: 65%;
+  height: 50vh;
+  min-height: 356px;
+
   background-color: white;
   border-radius: 6px;
+}
+
+.auth-container .items {
+  width: 50%;
+  height: 100%;
+}
+
+.bank-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bank-img {
+  max-width: 100%;
+  max-height: 100%;
+  /*bordear esquinas*/
+  border-radius: 6px;
+}
+
+.formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid;
+  border-image: linear-gradient(to bottom, white, black, white) 1;
+  overflow-y: scroll;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.full-width {
+  width: 50%;
+  height: 100%;
+}
+
+.overflow {
+  overflow: hidden;
 }

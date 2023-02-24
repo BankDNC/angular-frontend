@@ -1,1 +1,67 @@
-<p>register works!</p>
+<div class="container-form">
+  <h1>Registrarse</h1>
+  <form [formGroup]="registerForm">
+    <mat-form-field class="full-width">
+      <mat-label>Nombre</mat-label>
+      <input type="text" matInput [formControl]="name" placeholder="Ingrese su nombre">
+      <mat-error *ngIf="name.hasError('required')">
+        El nombre es <strong>Requerido</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Apellido</mat-label>
+      <input type="text" matInput [formControl]="lastName" placeholder="Ingrese su apellido">
+      <mat-error *ngIf="lastName.hasError('required')">
+        El apellido es <strong>Requerido</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Numero de documento</mat-label>
+      <input type="text" matInput [formControl]="dni" placeholder="Ingrese su documento">
+      <mat-error *ngIf="dni.hasError('required')">
+        El numero de documento es <strong>Requerido</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Correo</mat-label>
+      <input type="email" matInput [formControl]="email" placeholder="example@example.com">
+      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+        Porfavor ingrese un correo valido
+      </mat-error>
+      <mat-error *ngIf="email.hasError('required')">
+        El correo es <strong>Requerido</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Contraseña</mat-label>
+      <input type="password" matInput [formControl]="password" placeholder="Ingrese su contraseña">
+      <mat-error *ngIf="password.hasError('minlength') && !password.hasError('required')">
+        Porfavor ingrese una contraseña de al menos 8 caracteres
+      </mat-error>
+      <mat-error *ngIf="password.hasError('required')">
+        La contraseña es <strong>Requerida</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Numero de Telefono</mat-label>
+      <input type="number" matInput [formControl]="phone" placeholder="example@example.com">
+      <mat-error *ngIf="phone.hasError('required')">
+        El correo es <strong>Requerido</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="container-center submit">
+      <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid"
+        (click)="onSubmit()">Registrarse</button>
+    </div>
+  </form>
+  <hr>
+  <div class="container-center login">
+    <button mat-stroked-button color="accent" (click)="handlerLogin()">Ingresar</button>
+  </div>
+</div>
