@@ -19,8 +19,8 @@
 
     <mat-form-field class="full-width">
       <mat-label>Numero de documento</mat-label>
-      <input type="text" matInput [formControl]="document" placeholder="Ingrese su documento">
-      <mat-error *ngIf="document.hasError('required')">
+      <input type="text" matInput [formControl]="dni" placeholder="Ingrese su documento">
+      <mat-error *ngIf="dni.hasError('required')">
         El numero de documento es <strong>Requerido</strong>
       </mat-error>
     </mat-form-field>
