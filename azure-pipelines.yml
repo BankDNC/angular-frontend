@@ -21,7 +21,7 @@ steps:
   displayName: 'npm install'
 
 - script: |
-    ng build --prod
+    ng build
   displayName: 'npm build'
 
 - task: CopyFiles@2
