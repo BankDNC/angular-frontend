@@ -1,0 +1,30 @@
+<mat-drawer-container class="sidenav-container">
+  <mat-drawer mode="side" opened>
+    <div class="img-container">
+      <img class="bank-img"
+        src="https://d500.epimg.net/cincodias/imagenes/2015/05/08/pyme/1431098283_691735_1431098420_noticia_normal.jpg"
+        alt="bankLogo" />
+    </div>
+    <div class="options-container">
+      <ul>
+        <li>
+          <a routerLink="/dashboard/products" routerLinkActive="active">
+            <mat-icon>home</mat-icon>
+            <span>Productos</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/dashboard/transactions" routerLinkActive="active">
+            <mat-icon>attach_money</mat-icon>
+            <span>Transacciones</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-toolbar />
+    <router-outlet/>
+  </mat-drawer-content>
+</mat-drawer-container>

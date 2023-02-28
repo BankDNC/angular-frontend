@@ -1,0 +1,44 @@
+.sidenav-container {
+  height: 100%;
+}
+
+mat-drawer{
+  background-color: #11151c;
+  color: white;
+  min-width: ;
+}
+
+mat-drawer a{
+  font-size: xx-large;
+  color: white;
+  text-decoration-line: none;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+li{
+  margin-top: 40px;
+}
+
+.bank-img{
+  max-height: 150px;
+}
+
+.options-container{
+  padding: 0 25px;
+  margin-top: 20px;
+}
+
+.img-container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.active{
+  color: rgb(117, 117, 117);
+  font-weight: bold;
+}
