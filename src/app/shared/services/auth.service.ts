@@ -36,7 +36,6 @@ export class AuthService {
         tap({
           next: (response: any) => {
             this.tokenService.saveToken(response.token)
-            //this.decriptTokenToUser(response.token);
           }
         })
       );

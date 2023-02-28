@@ -16,6 +16,11 @@ export class LoginComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required, Validators.minLength(8)]);
 
+  errorMessages = new Map<string, string>([
+    ['401', 'Email o contraseña incorrectos'],
+    ['0', 'No se pudo establecer conexión con el servidor']
+  ]);
+
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -40,7 +45,10 @@ export class LoginComponent implements OnInit {
     this.authService.login(email, password)
       .subscribe({
         next: () => this.router.navigate(['/dashboard']),
-        error: () => Swal.fire('Error', 'Credenciales incorrectas', 'error')
+        error: (e) => {
+          const message = this.errorMessages.get(e.status.toString()) ?? "Ocurrió un error inesperado";
+          Swal.fire('Error', message, 'error');
+        }
       });
   }
 
