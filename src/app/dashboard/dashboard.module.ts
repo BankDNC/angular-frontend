@@ -10,6 +10,7 @@ import { TransactionsComponent } from './pages/transactions/transactions.compone
 import { AccountComponent } from './components/account/account.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from '../interceptors/auth.interceptor';
+import { NewAccountComponent } from './components/new-account/new-account.component';
 
 
 
@@ -20,7 +21,8 @@ import { AuthInterceptor } from '../interceptors/auth.interceptor';
     SidenavComponent,
     AccountsComponent,
     TransactionsComponent,
-    AccountComponent
+    AccountComponent,
+    NewAccountComponent
   ],
   imports: [
     CommonModule,

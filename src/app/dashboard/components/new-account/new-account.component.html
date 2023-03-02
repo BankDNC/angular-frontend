@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>NUEVA CUENTA</h1>
+<div mat-dialog-content>
+  <p>Que tipo de cuenta desea crear?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <span class="spacer-toolbar"></span>
+  <button mat-raised-button [mat-dialog-close]="accountSaving" cdkFocusInitial color="primary">Ahorro</button>
+  <button mat-raised-button [mat-dialog-close]="accountCurrent" cdkFocusInitial color="accent">Corriente</button>
+</div>
