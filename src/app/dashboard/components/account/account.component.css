@@ -1,5 +1,18 @@
-.example-card {
+.account-card {
   max-width: 400px;
   min-width: 400px;
   margin: 10px;
+}
+
+.top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+mat-card-content{
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
 }

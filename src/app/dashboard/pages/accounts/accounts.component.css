@@ -1,9 +1,17 @@
 .accounts-container{
   margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .accounts-container h1{
   text-align: center;
+  flex: 1;
+}
+
+.accounts-container .btn{
+  margin-left: auto;
 }
 
 .account-container{

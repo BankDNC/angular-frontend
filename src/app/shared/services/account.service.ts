@@ -8,7 +8,7 @@ import { Account } from 'src/app/shared/models/account.model';
 })
 export class AccountService {
 
-  private apiUrl = `${environment.API_URL}`;
+  private apiUrl = `${environment.API_URL}/account`;
 
   constructor(
     private http: HttpClient
@@ -16,6 +16,10 @@ export class AccountService {
 
   // retorna una lista de Account
   getAccounts() {
-    return this.http.get<Account[]>(`${this.apiUrl}/account`);
+    return this.http.get<Account[]>(`${this.apiUrl}`);
+  }
+
+  createAccount(account: string){
+    return this.http.post(`${this.apiUrl}/create/${account}`,{});
   }
 }
