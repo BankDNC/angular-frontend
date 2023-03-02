@@ -7,10 +7,12 @@ import { UserToken } from '../models/user.model';
 })
 export class TokenService {
 
+  private token: string | null = sessionStorage.getItem('token');
+
   constructor() {
-    const storedToken = sessionStorage.getItem('token');
-    if (storedToken) {
-      this.userToken.next(this.decriptTokenToUser(storedToken));
+    this.token = sessionStorage.getItem('token');
+    if (this.token) {
+      this.userToken.next(this.decriptTokenToUser(this.token));
     }
   }
 
@@ -19,22 +21,23 @@ export class TokenService {
   userToken$ = this.userToken.asObservable();
 
   saveToken(token: string) {
+    this.token = token;
     sessionStorage.setItem('token', token);
     this.userToken.next(this.decriptTokenToUser(token));
   }
 
   getToken() {
-    return sessionStorage.getItem('token');
+    return this.token;
   }
 
   removeToken() {
+    this.token = null;
     sessionStorage.removeItem('token');
   }
 
   isValidToken(): boolean {
-    const token = sessionStorage.getItem('token');
-    if (token) {
-      const tokenExpirationDate = new Date(JSON.parse(atob(token.split('.')[1])).exp * 1000);
+    if (this.token) {
+      const tokenExpirationDate = new Date(JSON.parse(atob(this.token.split('.')[1])).exp * 1000);
       const now = new Date();
       return now < tokenExpirationDate;
     }

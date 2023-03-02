@@ -1,0 +1,13 @@
+.accounts-container{
+  margin: 20px;
+}
+
+.accounts-container h1{
+  text-align: center;
+}
+
+.account-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
